@@ -1,0 +1,11 @@
+<!-- templates/core/create_job.html -->
+{% extends "base.html" %}
+{% block content %}
+<h2>Create Job Posting</h2>
+<form method="POST">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit" class="btn btn-success">Create Job</button>
+</form>
+
+{% endblock %}

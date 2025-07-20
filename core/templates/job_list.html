@@ -1,0 +1,19 @@
+<!-- templates/core/job_list.html -->
+{% extends "base.html" %}
+{% block content %}
+<h2>Available Jobs</h2>
+
+{% if matched_jobs %}
+  <ul class="list-group">
+    {% for job, score in matched_jobs %}
+      <li class="list-group-item">
+        <strong>{{ job.title }}</strong> — Match Score: {{ score }}%
+        <br>
+        <small><strong>Required Skills:</strong> {{ job.required_skills }}</small>
+      </li>
+    {% endfor %}
+  </ul>
+{% else %}
+  <p>No jobs found.</p>
+{% endif %}
+{% endblock %}
