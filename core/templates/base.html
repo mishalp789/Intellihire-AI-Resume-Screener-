@@ -15,23 +15,33 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
-                {% if user.is_authenticated %}
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'upload_resume' %}">Upload Resume</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'logout' %}">Logout</a>
-                    </li>
-                {% else %}
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'register' %}">Register</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'login' %}">Login</a>
-                    </li>
-                {% endif %}
-            </ul>
+           <ul class="navbar-nav ms-auto">
+    {% if user.is_authenticated %}
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'job_list' %}">Job List</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'create_job' %}">Post a Job</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'upload_resume' %}">Upload Resume</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'matched_results' %}">Matches</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+        </li>
+    {% else %}
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'register' %}">Register</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'login' %}">Login</a>
+        </li>
+    {% endif %}
+</ul>
+
         </div>
     </div>
 </nav>
